@@ -4,13 +4,15 @@
 
 #!/bin/bash
 
-#test current iptables 
 sudo iptables -L
 
-#check ping for icmps
+echo "check ping, no output means service not available"
+
 sudo iptables -L -n | grep icmp
 
+echo "check if 9050 is connectable or not, no output means connection not available"
 telnet localhost 9050
+
 #telnet ran successfully for the port 9050
 
 
